@@ -8,16 +8,16 @@ function beep(inputNumber) {
         for (let i = 0; i <= inputNumber; i++) {
             if (i.toString().indexOf("3") !== -1) {
                 numberArray.push(" Won't you be my neighbor?");
-            } else if(i.toString().indexOf("2") !== -1){
+            } else if (i.toString().indexOf("2") !== -1) {
                 numberArray.push(" Boop!");
-            } else if (i.toString().indexOf("1") !== -1){
+            } else if (i.toString().indexOf("1") !== -1) {
                 numberArray.push(" Beep!");
             } else {
                 numberArray.push(i);
             }
         }
 
-        document.getElementById("result").innerText = numberArray;
+        return numberArray;
     }
 }
 
@@ -28,6 +28,6 @@ window.onload = function () {
         event.preventDefault();
         let input = document.getElementById("input").value;
         let numberArray = beep(input);
-        document.getElementById("result").innerText = numberArray;
+        document.getElementById("result").innerText = numberArray,join(" ");
     }
 }
