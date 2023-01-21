@@ -1,19 +1,23 @@
 function beep(inputNumber) {
     if (inputNumber < 1) {
         const paragraph = document.createElement("p");
-        paragraph.append("Please enter integer number > 0");
+        paragraph.append("Please enter a number > 0");
         document.body.append(paragraph);
     } else {
         let numberArray = [];
         for (let i = 0; i <= inputNumber; i++) {
-            if(i.toString().indexOf("1") !== -1){
-                numberArray.push("Beep!");
+            if (i.toString().indexOf("3") !== -1) {
+                numberArray.push(" Won't you be my neighbor?");
+            } else if(i.toString().indexOf("2") !== -1){
+                numberArray.push(" Boop!");
+            } else if (i.toString().indexOf("1") !== -1){
+                numberArray.push(" Beep!");
             } else {
                 numberArray.push(i);
             }
         }
 
-        document.getElementById("output").innerText = numberArray;
+        document.getElementById("result").innerText = numberArray;
     }
 }
 
@@ -24,6 +28,6 @@ window.onload = function () {
         event.preventDefault();
         let input = document.getElementById("input").value;
         let numberArray = beep(input);
-        document.getElementById("output").innerText = numberArray;
+        document.getElementById("result").innerText = numberArray;
     }
 }
