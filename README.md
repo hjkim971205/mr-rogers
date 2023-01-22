@@ -2,7 +2,7 @@
 
 #### By _**Hyung Jin Kim**_
 
-#### https://github.com/hjkim971205/language-suggestion
+#### https://github.com/hjkim971205/mr-rogers
 
 ## Technologies Used
 
