@@ -1,4 +1,4 @@
-function beep(inputNumber) {
+function beep(inputNumber, inputName) {
     if (inputNumber < 1) {
         const paragraph = document.createElement("p");
         paragraph.append("Please enter a number > 0");
@@ -7,7 +7,7 @@ function beep(inputNumber) {
         let numberArray = [];
         for (let i = 0; i <= inputNumber; i++) {
             if (i.toString().indexOf("3") !== -1) {
-                numberArray.push(" Won't you be my neighbor?");
+                numberArray.push(" Won't you be my neighbor, " + inputName + "?");
             } else if (i.toString().indexOf("2") !== -1) {
                 numberArray.push(" Boop!");
             } else if (i.toString().indexOf("1") !== -1) {
@@ -27,7 +27,15 @@ window.onload = function () {
     form.onsubmit = function (event) {
         event.preventDefault();
         let input = document.getElementById("input").value;
-        let numberArray = beep(input);
-        document.getElementById("result").innerText = numberArray,join(" ");
+        let nameInput = document.getElementById("nameInput").value;
+        let numberArray = beep(input, nameInput);
+        document.getElementById("result").innerText = numberArray.join(" ");
     }
+    document.getElementById("btn").onclick = function () {
+        let input = document.getElementById("input").value;
+        let nameInput = document.getElementById("nameInput").value;
+        let numberArray = beep(input, nameInput);
+        document.getElementById("result").innerText = numberArray.reverse().join(" ");
+    }
+
 }
